@@ -1,4 +1,4 @@
 sample_dev
 ==========
 
-A webdev environment using vagrant/vbox ubuntu vm
+A basic webdev environment provisioned by puppet using vagrant/vbox ubuntu vm
