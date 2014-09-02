@@ -21,6 +21,9 @@ sudo service apache2 restart
 # Set Document root wthin apache2 to be
 /var/www/sample-webapp/public
 
+# Change apache service run user and group from 'www-data' to 'vagrant'
+/etc/apache2/envvars
+
 # Install Laravel
 cd /var/www/sample-webapp
 wget https://github.com/laravel/laravel/archive/master.zip
