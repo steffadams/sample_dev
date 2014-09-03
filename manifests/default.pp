@@ -1,11 +1,18 @@
 # ENSURE LATEST UPDATES APPLIED
 exec { "apt-get update":
-  path => "/usr/bin",
+  command => "apt-get update -y --fix-missing",
+  path => "/usr/bin:/usr/sbin:/bin:/usr/local/bin:/usr/local/sbin:/sbin",
 }
-# INSTALLL APACHE WEB SERVICE AND ENSURE RUNNING
+exec { "apt-get upgrade":
+  command => "apt-get upgrade -y --fix-missing",
+  path => "/usr/bin:/usr/sbin:/bin:/usr/local/bin:/usr/local/sbin:/sbin",
+  require => Exec["apt-get update"],
+}
+
+# INSTALL APACHE WEB SERVICE AND ENSURE RUNNING
 package { "apache2":
   ensure  => present,
-  require => Exec["apt-get update"],
+  require => Exec["apt-get upgrade"],
 }
 service { "apache2":
   ensure  => "running",
@@ -21,11 +28,18 @@ file { "/var/www/sample-webapp":
 }
 
 # REQUIRED PACKAGES
-package { "python-software-properties": ensure => present, }
-package { ["vim","vim-addon-manager", "vim-puppet"]: ensure => present, }
-package { ["php5","php5-cli","php5-mcrypt"]: ensure => present, }
-package { ["mysql-server","php5-mysql"]: ensure => present, }
-package { ["unzip","curl","openssl"]: ensure => present, }
+package { ["python-pycurl", "python-software-properties", "unattended-upgrades"]: 
+  ensure => present, 
+  require => Exec["apt-get upgrade"],
+}
+package { ["vim","vim-addon-manager", "vim-puppet","php5","php5-cli","php5-mcrypt"]: 
+  ensure => present,   
+  require => Exec["apt-get upgrade"],
+}
+package { ["mysql-server","php5-mysql","unzip","curl","openssl"]:
+  ensure => present,   
+  require => Exec["apt-get upgrade"],
+}
 
 # DOWNLOAD COMPOSER
 exec { "get_composer":
