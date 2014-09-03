@@ -15,7 +15,7 @@ package { "apache2":
   require => Exec["apt-get upgrade"],
 }
 service { "apache2":
-  ensure  => "running",
+  ensure  => "running",	
   require => Package["apache2"],
 }
 
@@ -27,7 +27,7 @@ file { "/var/www/sample-webapp":
   notify  => Service["apache2"],
 }
 
-# REQUIRED PACKAGES
+# INSTALL MORE PACKAGES
 package { ["python-pycurl", "python-software-properties", "unattended-upgrades"]: 
   ensure => present, 
   require => Exec["apt-get upgrade"],
@@ -51,5 +51,7 @@ exec { "get_composer":
 # INSTALL COMPOSER
 exec {"install_composer":
     command => "/bin/mv /home/vagrant/composer.phar /usr/local/bin/composer",
-    onlyif  => "/usr/bin/test -f /home/vagrant/composer.phar",
+    creates => "/usr/local/bin/composer",
+	onlyif => "/usr/bin/test -f /home/vagrant/composer.phar",
+	require => Exec["get_composer"],
 }
