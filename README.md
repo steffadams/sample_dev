@@ -16,6 +16,9 @@ sudo apt-get install -y php5
 sudo a2enmod rewrite
 sudo service apache2 restart
 
+# NOTE* Windows Host Only: - Define linux vim terminal within bashrc
+echo "export TERM=linux vim" >> ~/.bashrc
+
 # Set AllowOverride All (twice within document root, default is AllowOverride None) at:
 /etc/apache2/sites-available/default
 
