@@ -3,16 +3,11 @@ exec { "apt-get update":
   command => "apt-get update -y --fix-missing",
   path => "/usr/bin:/usr/sbin:/bin:/usr/local/bin:/usr/local/sbin:/sbin",
 }
-exec { "apt-get upgrade":
-  command => "apt-get upgrade -y --fix-missing",
-  path => "/usr/bin:/usr/sbin:/bin:/usr/local/bin:/usr/local/sbin:/sbin",
-  require => Exec["apt-get update"],
-}
 
 # INSTALL APACHE WEB SERVICE AND ENSURE RUNNING
 package { "apache2":
   ensure  => present,
-  require => Exec["apt-get upgrade"],
+  require => Exec["apt-get update"],
 }
 service { "apache2":
   ensure  => "running",	
@@ -30,15 +25,15 @@ file { "/var/www/webapp":
 # INSTALL MORE PACKAGES
 package { ["python-pycurl", "python-software-properties", "unattended-upgrades"]: 
   ensure => present, 
-  require => Exec["apt-get upgrade"],
+  require => Exec["apt-get update"],
 }
 package { ["vim","vim-addon-manager", "vim-puppet","php5","php5-cli","php5-mcrypt"]: 
   ensure => present,   
-  require => Exec["apt-get upgrade"],
+  require => Exec["apt-get update"],
 }
 package { ["mysql-server","php5-mysql","unzip","curl","openssl"]:
   ensure => present,   
-  require => Exec["apt-get upgrade"],
+  require => Exec["apt-get update"],
 }
 
 # DOWNLOAD COMPOSER
