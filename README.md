@@ -28,11 +28,11 @@ sudo service apache2 restart
 
 `echo "export TERM=linux vim" >> ~/.bashrc`
 
-Within /etc/apache2/sites-available/default (twice) set:
+Within /etc/apache2/sites-available/default at DocumentRoot section (twice) set:
 
 `AllowOverride All`
 
-Within /etc/apache2/sites-available/default Set Document root (twice) to:
+Within /etc/apache2/sites-available/default at DocumentRoot section, set DocumentRoot (twice) to path:
 
 `/var/www/webapp/public`
 
