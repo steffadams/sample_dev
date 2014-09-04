@@ -14,7 +14,7 @@ To install laravel once provisioned do:
 Upgrade to the latest php version
 ```
 sudo add-apt-repository ppa:ondrej/php5-oldstable
-sudo apt-getupdate
+sudo apt-get update
 sudo apt-get install -y php5
 ```
 
