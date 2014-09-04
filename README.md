@@ -1,7 +1,7 @@
 # sample_dev
 
-# A basic laravel webdev environment provisioned by puppet using a vagrant/vbox ubuntu install
-# Install and provision the vm with command:
+#### A basic laravel webdev environment provisioned by puppet using a vagrant/vbox ubuntu install
+#### Install and provision the vm with command:
 
 vagrant up
 
