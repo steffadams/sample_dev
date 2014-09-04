@@ -49,8 +49,10 @@ sudo composer install
 sudo chmod -R 777 app/storage
 ```
 Resart Apache
+
 `sudo service apache2 restart`
 
 Navigate within browser to:
+
 `http://localhost:8080`
 
