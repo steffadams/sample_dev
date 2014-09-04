@@ -36,9 +36,17 @@ Set Document root (twice) at above location to:
 
 `/var/www/webapp/public`
 
-Change apache service run user and group from 'www-data' to 'vagrant' at:
+Change apache service run user and group from 'www-data' to 'vagrant'
+
+`sudo service apache2 stop`
+
+Edit user/group values within:
 
 `/etc/apache2/envvars`
+
+Restart apache2 service
+
+`sudo service apache2 start`
 
 Install Laravel
 ```
