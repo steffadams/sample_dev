@@ -3,13 +3,13 @@
 #####A basic laravel webdev environment provisioned by puppet using a vagrant/vbox ubuntu install
 Install and provision the vm with command:
 
-`vagrant up
+`vagrant up`
 
 TODO: PUPPETIZE THE REMAINING BELOW STEPS
 
 To install laravel once provisioned do:
 
-vagrant ssh
+`vagrant ssh`
 
 # Upgrade to the latest php version
 sudo add-apt-repository ppa:ondrej/php5-oldstable
@@ -17,8 +17,8 @@ sudo apt-getupdate
 sudo apt-get install -y php5
 
 # Install rewrite apache2 module
-sudo a2enmod rewrite
-sudo service apache2 restart
+`sudo a2enmod rewrite`
+`sudo service apache2 restart`
 
 # NOTE* Windows Host Only: - Define linux vim terminal within bashrc
 echo "export TERM=linux vim" >> ~/.bashrc
