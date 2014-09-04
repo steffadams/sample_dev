@@ -44,9 +44,12 @@ Edit values $APACHE_RUN_USER and $APACHE_RUN_GROUP within:
 
 `/etc/apache2/envvars`
 
-Restart apache2 service
+Start apache2 service
 
-`sudo service apache2 start`
+```
+sudo rm -r /var/lock/apache2
+sudo service apache2 start
+```
 
 Install Laravel
 ```
