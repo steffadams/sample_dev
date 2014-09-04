@@ -40,7 +40,7 @@ Change apache service run user and group from 'www-data' to 'vagrant'
 
 `sudo service apache2 stop`
 
-Edit user/group values within:
+Edit values $APACHE_RUN_USER and $APACHE_RUN_GROUP within:
 
 `/etc/apache2/envvars`
 
