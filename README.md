@@ -36,17 +36,17 @@ Set Document root (twice) at above location to:
 
 `/var/www/webapp/public`
 
-Change apache service run user and group from 'www-data' to 'vagrant'
-
-`sudo service apache2 stop`
-
-Edit values $APACHE_RUN_USER and $APACHE_RUN_GROUP within:
-
-`/etc/apache2/envvars`
-
-Start apache2 service
+Within /etc/apache2/envvars set:
 
 ```
+APACHE_RUN_USER=vagrant
+APACHE_RUN_GROUP=vagrant
+```
+
+Restart apache2 service
+
+```
+sudo service apache2 stop
 sudo rm -r /var/lock/apache2
 sudo service apache2 start
 ```
