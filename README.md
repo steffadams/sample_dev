@@ -39,8 +39,8 @@ Within /etc/apache2/sites-available/default at DocumentRoot section, set Documen
 Within /etc/apache2/envvars set:
 
 ```
-APACHE_RUN_USER=vagrant
-APACHE_RUN_GROUP=vagrant
+export APACHE_RUN_USER=vagrant
+export APACHE_RUN_GROUP=vagrant
 ```
 
 Restart apache2 service
