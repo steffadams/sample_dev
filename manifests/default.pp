@@ -20,7 +20,7 @@ service { "apache2":
 }
 
 # SET SITE LOCATION
-file { "/var/www/sample-webapp":
+file { "/var/www/webapp":
   ensure  => "link",
   target  => "/vagrant/sample-webapp",
   require => Package["apache2"],
