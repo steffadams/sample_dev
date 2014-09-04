@@ -52,6 +52,6 @@ exec { "get_composer":
 exec {"install_composer":
     command => "/bin/mv /home/vagrant/composer.phar /usr/local/bin/composer",
     creates => "/usr/local/bin/composer",
-	onlyif => "/usr/bin/test -f /home/vagrant/composer.phar",
-	require => Exec["get_composer"],
+    onlyif => "/usr/bin/test -f /home/vagrant/composer.phar",
+    require => Exec["get_composer"],
 }
