@@ -20,7 +20,7 @@ service { "apache2":
 }
 
 # SET SITE LOCATION
-file { "/var/www/sample-webapp":
+file { "/var/www/webapp":
   ensure  => "link",
   target  => "/vagrant/sample-webapp",
   require => Package["apache2"],
@@ -43,15 +43,15 @@ package { ["mysql-server","php5-mysql","unzip","curl","openssl"]:
 
 # DOWNLOAD COMPOSER
 exec { "get_composer":
-    command => "/usr/bin/curl -sS https://getcomposer.org/installer | php",
-    unless  => "/usr/bin/test -f /usr/local/bin/composer",
-    require => Package["php5-cli"], 
+  command => "/usr/bin/curl -sS https://getcomposer.org/installer | php",
+  unless  => "/usr/bin/test -f /usr/local/bin/composer",
+  require => Package["php5-cli"], 
 }
 
 # INSTALL COMPOSER
 exec {"install_composer":
-    command => "/bin/mv /home/vagrant/composer.phar /usr/local/bin/composer",
-    creates => "/usr/local/bin/composer",
+  command => "/bin/mv /home/vagrant/composer.phar /usr/local/bin/composer",
+  creates => "/usr/local/bin/composer",
 	onlyif => "/usr/bin/test -f /home/vagrant/composer.phar",
 	require => Exec["get_composer"],
 }
