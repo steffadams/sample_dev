@@ -1,8 +1,12 @@
 # sample_dev
 
 # A basic laravel webdev environment provisioned by puppet using a vagrant/vbox ubuntu install
+# Install and provision the vm with command:
 
-# TODO: PUPPETIZE THE REMAINING BELOW STEPS: 
+vagrant up
+
+# TODO: PUPPETIZE THE REMAINING BELOW STEPS
+
 # To install laravel once provisioned do:
 
 vagrant ssh
@@ -23,13 +27,13 @@ echo "export TERM=linux vim" >> ~/.bashrc
 /etc/apache2/sites-available/default
 
 # Set Document root (twice) at above location to:
-/var/www/sample-webapp/public
+/var/www/webapp/public
 
 # Change apache service run user and group from 'www-data' to 'vagrant' at:
 /etc/apache2/envvars
 
 # Install Laravel
-cd /var/www/sample-webapp
+cd /var/www/webapp
 wget https://github.com/laravel/laravel/archive/master.zip
 sudo unzip master.zip && cd laravel-master && sudo mv * ../ && cd ..
 rm -r laravel-master && rm master.zip
