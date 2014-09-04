@@ -17,8 +17,10 @@ sudo apt-getupdate
 sudo apt-get install -y php5
 
 # Install rewrite apache2 module
-`sudo a2enmod rewrite`
-`sudo service apache2 restart`
+```
+sudo a2enmod rewrite
+sudo service apache2 restart
+```
 
 # NOTE* Windows Host Only: - Define linux vim terminal within bashrc
 echo "export TERM=linux vim" >> ~/.bashrc
