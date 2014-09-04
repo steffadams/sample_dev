@@ -24,8 +24,9 @@ sudo a2enmod rewrite
 sudo service apache2 restart
 ```
 
-NOTE* Windows Host Only: - Define linux vim terminal within bashrc
-echo "export TERM=linux vim" >> ~/.bashrc
+**NOTE** Windows Host Only: - Define linux vim terminal within bashrc
+
+`echo "export TERM=linux vim" >> ~/.bashrc`
 
 Set AllowOverride All (twice within document root, default is AllowOverride None) at:
 
