@@ -5,14 +5,14 @@ Install and provision the vm with command:
 
 `vagrant up`
 
-TODO: PUPPETIZE THE REMAINING BELOW STEPS
+#####TODO: PUPPETIZE THE REMAINING BELOW STEPS
 
 To install laravel once provisioned do:
 
 `vagrant ssh`
 
-# Upgrade to the latest php version
-sudo add-apt-repository ppa:ondrej/php5-oldstable
+Upgrade to the latest php version
+`sudo add-apt-repository ppa:ondrej/php5-oldstable`
 sudo apt-getupdate
 sudo apt-get install -y php5
 
