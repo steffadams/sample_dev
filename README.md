@@ -28,12 +28,15 @@ NOTE* Windows Host Only: - Define linux vim terminal within bashrc
 echo "export TERM=linux vim" >> ~/.bashrc
 
 Set AllowOverride All (twice within document root, default is AllowOverride None) at:
+
 `/etc/apache2/sites-available/default`
 
 Set Document root (twice) at above location to:
+
 `/var/www/webapp/public`
 
 Change apache service run user and group from 'www-data' to 'vagrant' at:
+
 `/etc/apache2/envvars`
 
 Install Laravel
