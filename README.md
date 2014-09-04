@@ -1,13 +1,13 @@
 # sample_dev
 
-#### A basic laravel webdev environment provisioned by puppet using a vagrant/vbox ubuntu install
-#### Install and provision the vm with command:
+#####A basic laravel webdev environment provisioned by puppet using a vagrant/vbox ubuntu install
+Install and provision the vm with command:
 
-vagrant up
+`vagrant up
 
-# TODO: PUPPETIZE THE REMAINING BELOW STEPS
+TODO: PUPPETIZE THE REMAINING BELOW STEPS
 
-# To install laravel once provisioned do:
+To install laravel once provisioned do:
 
 vagrant ssh
 
