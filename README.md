@@ -24,7 +24,7 @@ sudo a2enmod rewrite
 sudo service apache2 restart
 ```
 
-**NOTE** Windows Host Only: - Define linux vim terminal within bashrc
+**Note for Windows Hosts Only:** - Define linux vim terminal within bashrc
 
 `echo "export TERM=linux vim" >> ~/.bashrc`
 
