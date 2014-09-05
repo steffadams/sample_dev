@@ -3,13 +3,17 @@
 #####A basic laravel webdev environment provisioned by puppet using a vagrant/vbox ubuntu install
 Install and provision the vm with command:
 
-`vagrant up`
+```
+vagrant up
+```
 
 #####TODO: PUPPETIZE THE REMAINING BELOW STEPS
 
 To install laravel once provisioned do:
 
-`vagrant ssh`
+```
+vagrant ssh
+```
 
 Upgrade to the latest php version
 ```
@@ -26,15 +30,21 @@ sudo service apache2 restart
 
 **Note for Windows Hosts Only:** - Define linux vim terminal within bashrc
 
-`echo "export TERM=linux vim" >> ~/.bashrc`
+```
+echo "export TERM=linux vim" >> ~/.bashrc
+```
 
 Within /etc/apache2/sites-available/default at DocumentRoot section (twice) set:
 
-`AllowOverride All`
+```
+AllowOverride All
+```
 
 Within /etc/apache2/sites-available/default at DocumentRoot section, set DocumentRoot (twice) to path:
 
-`/var/www/webapp/public`
+```
+/var/www/webapp/public
+```
 
 Within /etc/apache2/envvars set:
 
@@ -62,9 +72,13 @@ sudo chmod -R 777 app/storage
 ```
 Restart Apache
 
-`sudo service apache2 restart`
+```
+sudo service apache2 restart
+```
 
 Navigate within browser to:
 
-`http://localhost:8080`
+```
+http://localhost:8080
+```
 
