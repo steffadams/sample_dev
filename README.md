@@ -60,7 +60,7 @@ rm -r laravel-master && rm master.zip
 sudo composer install
 sudo chmod -R 777 app/storage
 ```
-Resart Apache
+Restart Apache
 
 `sudo service apache2 restart`
 
